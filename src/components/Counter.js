@@ -1,11 +1,9 @@
 import React from 'react';
 
-export class Counter extends React.Component {
-  render() {
-    const { onIncrement, clicksNumber } = this.props;
+const Counter = (props) => {
+  const { onIncrement, clicksNumber } = props;
 
-    return <button onClick={onIncrement}>{clicksNumber}</button>;
-  }
-}
+  return <button onClick={onIncrement}>{clicksNumber}</button>;
+};
 
 export default Counter;
