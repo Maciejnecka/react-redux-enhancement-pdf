@@ -5,11 +5,15 @@ import './index.css';
 import IP from './IP';
 import reportWebVitals from './reportWebVitals';
 import { createStore, applyMiddleware } from 'redux';
+import { composeWithDevTools } from 'redux';
 import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
 import reducers from './reducers/ip.js';
 
-const store = createStore(reducers, applyMiddleware(thunk));
+const store = createStore(
+  reducers,
+  composeWithDevTools(applyMiddleware(thunk))
+);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
