@@ -1,17 +1,19 @@
+import types from '../types/counter';
+
 export const increaseCounterAction = () => {
   return {
-    type: 'increaseCounter',
+    type: types.INCREASE_COUNTER,
     payload: {
       step: 2,
     },
   };
 };
 
-export const setCounterAction = (vale) => {
+export const setCounterAction = (value) => {
   return {
-    typee: 'setCounter',
+    type: types.SET_COUNTER,
     payload: {
-      vale: vale,
+      value: value,
     },
   };
 };
