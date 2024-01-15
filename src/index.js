@@ -1,25 +1,21 @@
+// ./src/index.js
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+import IP from './IP';
 import reportWebVitals from './reportWebVitals';
-
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
-import reducers from './reducers';
+import reducers from './reducers/ip.js';
 
-const store = createStore(
-    reducers,
-    window.__REDUX_DEVTOOLS_EXTENSION__ 
-    && window.__REDUX_DEVTOOLS_EXTENSION__()
-);
-
+const store = createStore(reducers, applyMiddleware(thunk));
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App />
+      <IP />
     </Provider>
   </React.StrictMode>
 );
