@@ -5,7 +5,7 @@ import { getIP } from './actions/ip';
 
 const IP = () => {
   const dispatch = useDispatch();
-  const { ip, messages } = useSelector((state) => state);
+  const { ip, messages } = useSelector((state) => state.ip);
 
   useEffect(() => {
     dispatch(getIP());

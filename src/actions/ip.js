@@ -1,5 +1,5 @@
 // ./src/actions/ip.js
-import types from './../types/ip';
+import types from '../types/counter';
 
 const url = 'https://api.ipify.org?format=json';
 
