@@ -1,5 +1,6 @@
 import React from 'react';
 import Counter from '../Counter';
+import withOpacity from '../hoc/withOpacity';
 
 class CounterContainer extends React.Component {
   state = { clicksNumber: 0 };
@@ -10,8 +11,9 @@ class CounterContainer extends React.Component {
     });
   };
   render() {
+    const CounterWithOpacity = withOpacity(0.1, 5)(Counter);
     return (
-      <Counter
+      <CounterWithOpacity
         onIncrement={this.increment}
         clicksNumber={this.state.clicksNumber}
       />
